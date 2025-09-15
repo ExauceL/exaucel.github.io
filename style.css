@@ -1,0 +1,247 @@
+/* Reset et styles de base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    color: #ededed;
+    background: #081b29;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 10%;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    transition: 0.3s;
+}
+
+.header.sticky {
+    background: #081b29;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    font-size: 25px;
+    color: #ededed;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.navbar {
+    display: flex;
+}
+
+.navbar a {
+    font-size: 18px;
+    color: #ededed;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 35px;
+    transition: 0.3s;
+    position: relative;
+}
+
+.navbar a:hover,
+.navbar a.active {
+    color: #00abf0;
+}
+
+.navbar a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: #00abf0;
+    bottom: -5px;
+    left: 0;
+    transition: 0.3s;
+}
+
+.navbar a:hover::after,
+.navbar a.active::after {
+    width: 100%;
+}
+
+/* Section Home avec image de fond */
+.home {
+    height: 100vh;
+    background: linear-gradient(rgba(8, 27, 41, 0.9), rgba(8, 27, 41, 0.9)), url('home.jpg') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    padding: 0 10%;
+    position: relative;
+}
+
+.home-content {
+    max-width: 600px;
+    z-index: 2;
+}
+
+.home-content h1 {
+    font-size: 56px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.home-content h3 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #00abf0;
+    margin-bottom: 15px;
+}
+
+.home-content p {
+    font-size: 16px;
+    margin: 20px 0 40px;
+    line-height: 1.8;
+}
+
+.btn-box {
+    display: flex;
+    gap: 20px;
+}
+
+.btn-box a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 50px;
+    background: #00abf0;
+    border: 2px solid #00abf0;
+    border-radius: 8px;
+    font-size: 19px;
+    color: #081b29;
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: 0.5s;
+}
+
+.btn-box a:hover {
+    color: #00abf0;
+    background: transparent;
+}
+
+.home-sci {
+    position: absolute;
+    bottom: 40px;
+    width: 170px;
+    display: flex;
+    justify-content: space-between;
+    z-index: 2;
+}
+
+.home-sci a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border: 2px solid #00abf0;
+    border-radius: 50%;
+    font-size: 20px;
+    color: #00abf0;
+    text-decoration: none;
+    transition: 0.5s;
+}
+
+.home-sci a:hover {
+    color: #081b29;
+    background: #00abf0;
+}
+
+/* Sections About, Services, Portfolio, Contact */
+.about,
+.services,
+.portfolio,
+.contact {
+    padding: 100px 10%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.about h2,
+.services h2,
+.portfolio h2,
+.contact h2 {
+    font-size: 40px;
+    margin-bottom: 30px;
+    color: #00abf0;
+    text-align: center;
+}
+
+.about p,
+.services p,
+.portfolio p,
+.contact p {
+    font-size: 18px;
+    text-align: center;
+    line-height: 1.8;
+}
+
+/* Sticky header background on scroll */
+.header.sticky {
+    background: #081b29;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .navbar {
+        position: fixed;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background: #0a2a3e;
+        flex-direction: column;
+        display: none;
+        padding: 20px 0;
+        z-index: 999;
+    }
+
+    .navbar.active {
+        display: flex;
+    }
+
+    .navbar a {
+        margin: 15px 0;
+        font-size: 20px;
+    }
+
+    .btn-box {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .btn-box a {
+        width: 100%;
+    }
+}
+
+/* Menu burger */
+.menu-btn {
+    display: none;
+    font-size: 28px;
+    color: #ededed;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .menu-btn {
+        display: block;
+    }
+}
