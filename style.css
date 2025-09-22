@@ -232,7 +232,7 @@ body {
     }
 }
 
-/* Menu burger */
+
 .menu-btn {
     display: none;
     font-size: 28px;
@@ -244,4 +244,27 @@ body {
     .menu-btn {
         display: block;
     }
+}
+
+/* Dark mode */
+.dark-mode {
+    background-color: #111;
+    color: #fff;
+}
+
+/* add buttom */
+.theme-toggle, .about-toggle {
+    margin-top: 15px;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    background: #00abf0;
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.theme-toggle:hover, .about-toggle:hover {
+    background: #028a9b;
+    color: #e0f7fa;
 }

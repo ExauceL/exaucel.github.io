@@ -53,4 +53,43 @@ document.addEventListener('DOMContentLoaded', function () {
             observer.observe(el);
         });
     }
+
+    // 🌙 Dark/Light mode toggle
+    const themeToggle = document.createElement('button');
+    themeToggle.textContent = '🌙 Toggle Dark Mode';
+    themeToggle.classList.add('theme-toggle');
+    document.body.appendChild(themeToggle);
+
+    themeToggle.addEventListener('click', () => {
+        document.body.classList.toggle('dark-mode');
+    });
+
+    // 🎭 Show/Hide About Section (only if on About page)
+    if (document.querySelector('.about')) {
+        const toggleBtn = document.createElement('button');
+        toggleBtn.textContent = "Show/Hide About";
+        toggleBtn.classList.add('about-toggle');
+        document.querySelector('.about').appendChild(toggleBtn);
+
+        toggleBtn.addEventListener('click', () => {
+            const aboutText = document.querySelector('.about p');
+            aboutText.style.display = (aboutText.style.display === "none") ? "block" : "none";
+        });
+    }
+
+    // 📧 Extra Validation for Contact Page (if exists)
+    if (document.getElementById('contactForm')) {
+        const form = document.getElementById('contactForm');
+        const emailInput = document.getElementById('email');
+        const emailError = document.getElementById('emailError');
+
+        form.addEventListener('submit', function (e) {
+            if (!emailInput.value.includes('@')) {
+                e.preventDefault();
+                emailError.textContent = 'Please enter a valid email.';
+            } else {
+                emailError.textContent = '';
+            }
+        });
+    }
 });
